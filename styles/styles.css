@@ -1,0 +1,177 @@
+:root {
+    --white: #FFFFFF;
+    --dark-background: #161616;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Russo One', sans-serif;
+    color: var(--white);
+    overflow-y: scroll;
+    margin: 0;
+    background: var(--dark-background) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+li div {
+    width: 100%;
+    display: block;
+}
+
+h1 {
+    margin: 0 1rem;
+}
+
+a {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    user-select: none;
+    margin: .1rem .2rem;
+    background-color: transparent;
+    position: fixed;
+}
+
+#mood-picker {
+    display: none;
+    justify-content: space-between;
+    align-self: center;
+    margin-bottom: 2rem;
+    transform: translateY(25px);
+    transition: transform 50ms ease;
+}
+
+img.moods {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.expand {
+    transform: translateX(250px);
+    transition: transform 500ms ease;
+}
+
+.fade-in {
+    display: flex;
+}
+
+.inline {
+    display: inline;
+}
+
+/* MOBILE NAV STYLING */
+
+.hamburger {
+    height: auto;
+}
+
+header {
+    padding: 1.5rem;
+    position: relative;
+}
+
+header svg {
+    width: 30px;
+    fill: var(--active-menu-text-color);
+}
+
+header svg:hover {
+    fill: var(--menu-text-hover-color);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #474747;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width: 70%;
+    transform: translateX(-600px);
+    transition: transform 500ms ease;
+}
+
+.open nav {
+    transform: translateX(0);
+}
+
+nav .close {
+    flex: 0 0 auto;
+    margin: 1.5rem 0 1.5rem 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1 0 auto;
+}
+
+nav li {
+    list-style-type: none;
+    border-bottom: 1px solid var(--active-menu-text-color);
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+nav a {
+    width: 100%;
+    color: var(--active-menu-text-color);
+    display: inline-block;
+    padding: 1rem 0 1rem 1.5rem;
+    margin: 0;
+    text-decoration: none;
+    position: relative;
+    flex: 1 1 auto;
+}
+
+nav p {
+    padding: 1rem 0 1rem 1.5rem;
+}
+
+nav a:hover {
+    color: var(--menu-text-hover-color);
+}
+
+#mood-picker > div {
+    display: flex;
+    justify-content: center;
+}
+
+/* MOBILE NAV STYLING END */
+
+@media (min-width: 900px) {
+    
+}
