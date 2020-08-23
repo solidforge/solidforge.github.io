@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matt C Perry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <meta name="description" content="Personal Portfolio of Matt Perry">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <meta name="theme-color" content="#1e3799">
+    <meta property="og:url" content="https://www.mattcperry.com/">
+    <meta property="og:title" content="Matt Perry - Portfolio">
+    <meta property="og:description" content="Personal Portfolio of Matt Perry">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+    <meta property="og:image:alt" content="Code on Laptop">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="code_portfolio">
+    <meta name="twitter:site:id" content="@solid_forge">
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+    <meta name="twitter:image:alt" content="Code on Laptop">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="hamburger">
+            <svg viewbox="0 0 32 32">
+                <use xlink:href="#hamburger-menu" />
+            </svg>
+        </div>
+        <nav>
+            <div class="close">
+                <svg viewbox="0 0 32 32">
+                    <use xlink:href="#close-icon"/>
+                </svg>
+            </div>
+            <ul class="tabs">
+                <li class="tab">
+                    <a class="" href="">Home</a>
+                </li>
+                <li onmouseover="mouseOverMoods()" onmouseout="mouseOutMoods()">
+                    <p>What is Matt's mood?</p>
+                    <div id="mood-picker">
+                        <div id="professional">
+                            <img class="moods" src="icons/light.png" alt="~">
+                        </div>
+                        <div id="pokemon">
+                            <img class="moods" src="icons/pokemon-go.jpg" alt="P">
+                        </div>
+                        <div id="starwars">
+                            <img class="moods" src="icons/star_wars.jpg" alt="SW">
+                        </div>
+                        <div>
+                            <img class="" src="" alt="Music">
+                        </div>
+                        <div id="technology">
+                            <img class="moods" src="icons/code.jpg" alt="T">
+                        </div>
+                        <div id="dark">
+                            <img class="moods" src="icons/dark.png" alt="Dark">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="">Portfolio</a>
+                </li>
+                <li>
+                    <a href="">Pokemon Go</a>
+                </li>
+                <li style="flex-direction: row;">
+                    <a class="inline" href="sign_in.html">
+                        <img src="icons/edit-solid.svg" alt="" style="width: 3rem">
+                    </a>
+                    <p style="display: inline;">Sign In</p>
+                </li>
+                <li style="flex-direction: row;">
+                    <a href="create_account.html">
+                        <img src="icons/user-circle-solid.svg" alt="" style="width: 3rem">
+                    </a>
+                    <p>Create Account</p>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="ribbontext">MCP</h1>
+    </header>
+    <main>
+        <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>-->
+    </main>
+    <svg class="svg-info" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="hamburger-menu">
+            <path d="M4 10h24a2 2 0 000-4H4a2 2 0 000 4zm24 4H4a2 2 0 000 4h24a2 2 0 000-4zm0 8H4a2 2 0 000 4h24a2 2 0 000-4z" />
+        </symbol>
+        <symbol id="close-icon">
+            <g>
+                <path stroke="null" d="M28.703 25.14L19.563 16l9.14-9.14a2.513 2.513 0 000-3.563 2.513 2.513 0 00-3.563 0L16 12.437l-9.14-9.14a2.513 2.513 0 00-3.563 0 2.513 2.513 0 000 3.563l9.14 9.14-9.14 9.14a2.513 2.513 0 000 3.563 2.513 2.513 0 003.563 0l9.14-9.14 9.14 9.14a2.513 2.513 0 003.563 0c.98-.987.98-2.583 0-3.563z" />
+            </g>
+        </symbol>
+    </svg>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
