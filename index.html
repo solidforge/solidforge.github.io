@@ -26,14 +26,15 @@
     <meta name="twitter:image"
         content="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
     <meta name="twitter:image:alt" content="Code on Laptop">
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="index">
     <header>
         <div class="hamburger">
             <svg viewbox="0 0 32 32">
-                <use xlink:href="#hamburger-menu" />
+                <use xlink:href="#hamburger-menu"/>
             </svg>
         </div>
         <nav>
@@ -42,11 +43,11 @@
                     <use xlink:href="#close-icon"/>
                 </svg>
             </div>
-            <ul class="tabs">
-                <li class="tab">
+            <ul>
+                <li>
                     <a class="" href="">Home</a>
                 </li>
-                <li onmouseover="mouseOverMoods()" onmouseout="mouseOutMoods()">
+                <!-- <li>
                     <p>What is Matt's mood?</p>
                     <div id="mood-picker">
                         <div id="professional">
@@ -68,11 +69,11 @@
                             <img class="moods" src="icons/dark.png" alt="Dark">
                         </div>
                     </div>
-                </li>
+                </li> -->
                 <li>
                     <a href="">Portfolio</a>
                 </li>
-                <li>
+                <!--<li>
                     <a href="">Pokemon Go</a>
                 </li>
                 <li style="flex-direction: row;">
@@ -86,18 +87,42 @@
                         <img src="icons/user-circle-solid.svg" alt="" style="width: 3rem">
                     </a>
                     <p>Create Account</p>
-                </li>
+                </li>-->
+                <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
             </ul>
         </nav>
-        <h1 class="ribbontext">MCP</h1>
+        <h1 class="ribbon-text">MCP</h1>
+        <div class="name-header">
+            <h2>Matthew C. Perry</h2>
+        </div>
     </header>
     <main>
-        <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab assumenda quae earum sequi tempore iure quas, possimus soluta. Fugit ab dolor odit similique, voluptate iure voluptatem ipsa cum! Sed.</p>-->
+        <div class="overlay">
+            <h2>Front-End Web Developer</h2>
+        </div>
+        <picture>
+            <img src="images/zion_portrait.jpg" alt="Matt in front of Zions">
+        </picture>
+        <div class="fade">
+            
+        </div>
+        <section>
+            <p>Matt is currently a student in BYU studying computer science. Some of his technological
+                 interests include web design (both frontend and backend), mobile app development, and
+                  data science. Through an education at BYU, he's become proficient in HTML, CSS, JavaScript,
+                   VBA, and SQL.</p>
+            <p>This last summer and fall, Matt has had the opportunity to intern for Triathlon Batteries,
+                 creating their online battery selector tool. Working with both frontend and backend, he 
+                 programmed the website to query from a database, display on the webpage, and then be saved
+                  in a PDF and sent as a quote. During this project, he learned how to use the Vue.js framework
+                   combined with PHP.</p>
+            <p>Other experiences include working at BYU as a web developer for housing. During his time there,
+                 Matt wrote Tableau reports on conference housing and made code improvements on the website.
+                  The website development experience gave him experience in the ASP.net framework and Visual
+                   Basic programming language.</p>
+            <p>Matt also enjoys playing musical instruments and writing music. Currently he is co-director
+                 of the BYU a cappella group Riff-Dis and member of the BYU Symphony Orchestra.</p>
+        </section>
     </main>
     <svg class="svg-info" xmlns="http://www.w3.org/2000/svg">
         <symbol id="hamburger-menu">

@@ -1,0 +1,308 @@
+/* mobile */
+@media (min-width: 0px) {
+    :root {
+        --white: #FFFFFF;
+        --dark-background: #161616;
+        --nav-background:  #474747;
+        --russo-one-font: 'Russo One', sans-serif;
+        --playfair-font: 'Playfair Display', serif;
+    }
+
+    html {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+        -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--russo-one-font);
+        font-weight: lighter;
+        color: var(--white);
+        overflow-y: scroll;
+        margin: 0;
+        padding: 0;
+        background: var(--dark-background) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        user-select: none;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    li div {
+        width: 100%;
+        display: block;
+    }
+
+    h1 {
+        margin: 0 1.5rem;
+        align-self: center;
+    }
+
+    h2 {
+        font-family: var(--playfair-font);
+    }
+
+    a {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        display: flex;
+        flex-flow: wrap;
+        user-select: none;
+        margin: .1rem .2rem;
+        background-color: transparent;
+        position: static;
+    }
+
+    #mood-picker {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        margin-bottom: 2rem;
+        transform: translateY(25px);
+        transition: transform 50ms ease;
+    }
+
+    img.moods {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        border-radius: 100%;
+    }
+
+    .expand {
+        justify-self: flex-end;
+    }
+
+    .fade-in {
+        display: flex;
+    }
+
+    .inline {
+        display: inline;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        opacity: 50%;
+    }
+
+    div.overlay {
+        height: 0;
+        position: relative;
+        top: 8rem;
+        text-align: right;
+        font-size: 1rem;
+        z-index: 1;
+        margin-top: -1.25rem;
+    }
+
+    div.fade {
+        background: linear-gradient(rgba(255,255,255,0) 0%, rgba(22,22,22,1) 100%);
+        position: relative;
+        bottom: 25vh;
+        height: 50vh;
+        margin: -25vh;
+    }
+
+    div.name-header {
+        position: absolute;
+        top: 9rem;
+        left: 0;
+        right: 0;
+        text-align: right;
+        z-index: 1;
+        margin: 0;
+        font-size: 0.75rem;
+        height: 0;
+    }
+
+    section {
+        margin: 0 1rem;
+        font-family: var(--playfair-font);
+        font-size: 1.25rem;
+    }
+
+    /* MOBILE NAV STYLING */
+
+    .hamburger {
+        height: auto;
+        cursor: pointer;
+        align-self: center;
+    }
+
+    header {
+        padding: 1.5rem;
+        position: relative;
+    }
+
+    header svg {
+        width: 30px;
+        fill: var(--active-menu-text-color);
+    }
+
+    header svg:hover {
+        fill: var(--menu-text-hover-color);
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--nav-background);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        width: 70%;
+        transform: translateX(-600px);
+        transition: transform 500ms ease;
+        height: 100vh;
+        border-right: 5px solid var(--dark-background);
+    }
+
+    .open nav {
+        transform: translateX(0);
+    }
+
+    nav .close {
+        flex: 0 0 auto;
+        margin: 1.5rem 0 1.5rem 1.5rem;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        flex: 1 0 auto;
+    }
+
+    nav li {
+        list-style-type: none;
+        border-bottom: 3px solid var(--dark-background);
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+    }
+
+    nav li:first-child {
+        border-top: 3px solid var(--dark-background);
+    }
+
+    nav a {
+        width: 100%;
+        color: var(--white);
+        display: inline-block;
+        padding: 1rem 0 1rem 1.5rem;
+        margin: 0;
+        text-decoration: none;
+        position: relative;
+        flex: 1 1 auto;
+    }
+
+    nav p {
+        padding: 1rem 0 1rem 1.5rem;
+    }
+
+    nav a:hover {
+        color: var(#242424);
+    }
+
+    #mood-picker > div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .svg-info {
+        display: none;
+    }
+
+    /* MOBILE NAV STYLING END */
+}
+
+/* tablet */
+@media (min-width: 480px) {    
+    nav {
+        width: 100%;
+        transform: translateY(-800px);
+        height: auto;
+    }
+
+    div.overlay {
+        top: 14rem;
+        text-align: right;
+        font-size: 1.5rem;
+        margin-top: -1.5rem;
+    }
+
+    div.name-header {
+        position: absolute;
+        top: 11rem;
+        text-align: right;
+        z-index: 1;
+        margin: 0;
+        font-size: 1rem;
+    }
+}
+
+/* computer */
+@media (min-width: 1024px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
+        width: 30%;
+        left: 70vw;
+        height: 100vh;
+        transform: translateX(calc(30vw + 5px));
+        border-left: 5px solid var(--dark-background);
+    }
+
+    .hamburger {
+        order: 1;
+        margin-left: auto;
+    }
+
+    nav .close {
+        margin: 1.5rem 1rem 1.5rem auto;
+        padding-right: 1rem;
+    }
+    
+    div.overlay {
+        top: 6rem;
+        text-align: center;
+        font-size: 3.5rem;
+        margin-top: -4.5rem;
+    }
+
+    div.name-header {
+        position: static;
+    }
+
+    div.name-header h2 {
+        margin: auto;
+    }
+
+}
