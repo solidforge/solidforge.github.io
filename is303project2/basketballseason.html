@@ -1,0 +1,286 @@
+<!--
+    Cameron Keetch, Blake Krupa, Brody Gentry, Chandler Serr, Connor Grant, Matthew Perry
+    Section 2 (Professor Hilton)
+-->
+
+<!--
+     This program takes an array of different teams and using OOP, makes them play each other twice in a regular season, giving each home team a 5 point advantage and
+     considering ties. At the end of the season, the team win percent is calculated and printed out in order of the team that had the most wins. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCC Tournament</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Oswald', sans-serif;
+            background: url(basketballcourt.jpg) no-repeat center center fixed;
+            background-size: cover;
+            color: #FFFFFF;
+        }
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+        li {
+            list-style-type: none;
+            font-size: 3.2rem;
+        }
+        main {
+            display: flex;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+        }
+        div {
+            flex: 1 1 50%;
+            text-align: center;
+            margin: .5rem 1rem;
+        }
+        .results {
+            font-size: 1.6rem;
+        }
+        input[type=button] {
+            padding: .5rem;
+            background-color: #FF5656;
+            color: #FF9898;
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.2rem;
+            border: none;
+            outline: 3px solid #FF0000;
+            cursor: pointer;
+            position: relative;
+            left: 1.25rem;
+        }
+        input[type=button]:hover {
+            background-color: #FF9898;
+            color: #FF5656;
+            outline: 3px solid #FF0000;
+        }
+        input[type=button]:active {
+            transform: translate(1px, 1px);
+        }
+        #output {
+            font-weight: lighter;
+            font-size: .9rem;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+//Creates Classes, Methods, and Constructors 
+        class Team {
+            teamName;
+            wins = 0;
+            losses = 0;
+            winLossPct = 0.0;
+            games = [];
+
+            getTeam()
+            {
+                return(this.teamName);
+            }
+            setTeam(teamName)
+            {
+                this.teamName = teamName;
+            }
+            //Sets wins & losses and calculates the win percentage
+            setWinsLosses(wins, losses)
+            {
+                this.wins += wins;
+                this.losses += losses;
+                this.winLossPct = ((this.wins/(this.losses+this.wins))*100).toFixed(2);
+            }
+            getWins()
+            {
+                return this.wins;
+            }
+            getLosses()
+            {
+                return this.losses;
+            }
+            calcWinLossPct()
+            {
+                return(this.winLossPct);
+            }
+        }
+        
+        class BasketballTeam extends Team{
+            totalPointsFor = 0; //across the entire season
+            totalPointsAgainst = 0; //across the entire season
+            
+            //Totals points for the home team?
+            addPointsFor(gamePointsFor)
+            {
+                this.totalPointsFor = this.totalPointsFor + gamePointsFor;
+                return (this.totalPointsFor);
+            }
+            //Totals points for the home team?
+            addPointsAgainst(gamePointsAgainst)
+            {
+                this.totalPointsAgainst = this.totalPointsAgainst + gamePointsAgainst;
+                return (this.totalPointsAgainst);
+            }
+            //Retreives all points for and against
+            getAllPoints(gamePointsFor, gamePointsAgainst)
+            {
+                return('Points for: '+this.totalPointsFor+'<br>Points against: '+this.totalPointsAgainst+'<br>');
+            }
+
+        }
+        class Game {
+            myScore;
+            theirScore;
+            winOrLoss;
+
+            constructor (myScore, theirScore ,winOrLoss)
+            {
+                this.myScore = myScore;
+                this.theirScore = theirScore;
+                this.winOrLoss = winOrLoss;
+            }
+            
+            //Generates random scores for regular game time
+            genScore() {
+                (Math.floor(Math.random()*101));
+            }
+            //Generates random scores for overtime
+            breakTie() {
+                return (Math.floor(Math.random()*16));
+            }
+        }
+
+        function playGame()
+        {
+            document.getElementById('output').innerHTML = "";
+            var output = '';
+            var aoBasketballTeam = [];
+            var ulTeamList;
+
+           
+
+            //This protion is used to get the list elements out of the tag and usable for classes. 
+            ulTeamList = document.getElementById('teamList');
+            teamLi = ulTeamList.getElementsByTagName("li");
+            
+            //this for loop creates and adds objects to an array, and gives each team their name. 
+            for (var teamCount = 0; teamCount < teamLi.length; teamCount++ ) {
+                
+                aoBasketballTeam.push(new BasketballTeam);
+                aoBasketballTeam[teamCount].teamName = teamLi[teamCount].innerText;
+            
+            }
+
+            //Starts for loops to make each team to play every other team twice and generate scores 
+            for (let iCountOuter = 0; iCountOuter < aoBasketballTeam.length; iCountOuter++) {
+
+                for (let iMiddleCount = (iCountOuter + 1); iMiddleCount < aoBasketballTeam.length; iMiddleCount++){
+
+                    for (let iInnerCount = 0; iInnerCount < 2; iInnerCount++) {
+                        
+                        //generate game scores
+                        let team1Score = (Math.floor(Math.random()*101));
+                        let team2Score = (Math.floor(Math.random()*101));
+
+                        //help decide homecourt advantage and adds 5 points to the home team
+                        if (iInnerCount == 0) {
+                            team1Score += 5;
+                        }
+
+                        else {
+                            team2Score += 5;
+                        }
+
+                        //make sure there is no tie
+                        while (team1Score === team2Score) {
+                            team1Score += (Math.floor(Math.random()*16));
+                            team2Score += (Math.floor(Math.random()*16));
+                        }
+
+                        //figuring out who won/lost
+                        if (team1Score > team2Score) {
+                            sTeam1WinOrLose = "W";
+                            sTeam2WinOrLose = "L";
+                            aoBasketballTeam[iCountOuter].setWinsLosses(1,0);
+                            aoBasketballTeam[iMiddleCount].setWinsLosses(0,1);
+                        }
+
+                        else {
+                            sTeam2WinOrLose = "W";
+                            sTeam1WinOrLose = "L";
+                            aoBasketballTeam[iCountOuter].setWinsLosses(0,1);
+                            aoBasketballTeam[iMiddleCount].setWinsLosses(1,0);
+                        }
+
+                    //creates new Game object
+                    aoBasketballTeam[iCountOuter].games.push(new Game(team1Score, team2Score, sTeam1WinOrLose));
+                    aoBasketballTeam[iMiddleCount].games.push(new Game(team2Score, team1Score, sTeam2WinOrLose));
+                        
+                    //add the points to the totals for each team
+                    aoBasketballTeam[iCountOuter].addPointsFor(team1Score);
+                    aoBasketballTeam[iCountOuter].addPointsAgainst(team2Score);
+                    aoBasketballTeam[iMiddleCount].addPointsFor(team2Score);
+                    aoBasketballTeam[iMiddleCount].addPointsAgainst(team1Score);
+                    
+                    }
+                }
+            }
+            
+            //Bubble sorts from most wins to least wins
+            for (iOuterCount = 0; iOuterCount < aoBasketballTeam.length - 1; iOuterCount++)
+            {
+                for (iInnerCount = iOuterCount + 1; iInnerCount < aoBasketballTeam.length; iInnerCount++)
+                {
+                    if (aoBasketballTeam[iOuterCount].wins < aoBasketballTeam[iInnerCount].wins)
+                    {
+                        iHoldWins = aoBasketballTeam[iInnerCount];
+                        aoBasketballTeam[iInnerCount] = aoBasketballTeam[iOuterCount];
+                        aoBasketballTeam[iOuterCount] = iHoldWins;
+                    }
+                }
+            }
+
+            //Posts output to HTML page
+            for (i = 0; i < aoBasketballTeam.length; i++) {
+                output += `${aoBasketballTeam[i].teamName}: ${aoBasketballTeam[i].wins} wins 
+                <br>${aoBasketballTeam[i].teamName} had a win percentage of 
+                ${aoBasketballTeam[i].winLossPct}%<br>${aoBasketballTeam[i].getAllPoints()}<br>`
+            }
+    
+            document.getElementById('output').innerHTML = output;
+        }
+        
+ 
+    </script>
+
+ <main>
+        <div>
+            <ul id= 'teamList'>
+                <li>BYU</li>
+                <li>Gonzaga</li>
+                <li>Loyola</li>
+                <li>Pacific</li>
+                <li>Pepperdine</li>
+                <li>Portland</li>
+                <li>Saint Marys</li>
+                <li>San Diego</li>
+                <li>San Francisco</li>
+                <li>Santa Clara</li>
+            </ul>
+            <input type = 'button' value = 'Play Game' onclick="playGame()">
+            <br><br><br><br>
+        </div>
+        <div>
+            <p class="results">Season Results:</p>
+            <p id = 'output'></p>
+        </div>
+    </main>
+</body>
+</html>
