@@ -8,12 +8,11 @@
         --russo-one-font: 'Russo One', sans-serif;
         --playfair-font: 'Playfair Display', serif;
     }
-
+    
     html {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        background-color: transparent;
     }
 
     *, *:before, *:after {
@@ -31,7 +30,6 @@
         overflow-y: scroll;
         overflow-x: hidden;
         width: 100%;
-        /* height: 100%; */
         margin: 0;
         padding: 0;
         background: var(--dark-background) no-repeat center center fixed;
@@ -46,13 +44,13 @@
         font-family: var(--playfair-font);
     }
 
-    div.prevent-scroll {
+    div#document {
         height: 100%;
         overflow: hidden;
     }
 
     /* SCROLL BAR STYLING */
-    /* width */
+    
     ::-webkit-scrollbar {
         display: fixed;
         position: absolute;
@@ -60,19 +58,16 @@
         width: 15px;
     }
     
-    /* Track */
     ::-webkit-scrollbar-track {
         background: var(--nav-background);
         border-radius: 3px;
     }
     
-    /* Handle */
     ::-webkit-scrollbar-thumb {
         background: var(--white);
         border-radius: 7px;
     }
     
-    /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
         background: var(--off-white);
     }
@@ -212,11 +207,11 @@
 
     header svg {
         width: 30px;
-        fill: var(--active-menu-text-color);
+        fill: var(--white);
     }
 
     header svg:hover {
-        fill: var(--menu-text-hover-color);
+        fill: var(--off-white);
     }
 
     nav {
