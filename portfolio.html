@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,14 +35,14 @@
 
 <body class="portfolio" id="body">
     <div class="prevent-scroll">
-        <header>
-            <div class="hamburger">
+        <header id="header">
+            <div class="hamburger" onclick="openNav()">
                 <svg viewbox="0 0 32 32">
                     <use xlink:href="#hamburger-menu"/>
                 </svg>
             </div>
             <nav>
-                <div class="close">
+                <div class="close" onclick="closeNav()">
                     <svg viewbox="0 0 32 32">
                         <use xlink:href="#close-icon"/>
                     </svg>
@@ -76,27 +77,11 @@
                     <li>
                         <a href="">Portfolio</a>
                     </li>
-                    <!--<li>
-                        <a href="">Pokemon Go</a>
-                    </li>
-                    <li style="flex-direction: row;">
-                        <a class="inline" href="sign_in.html">
-                            <img src="icons/edit-solid.svg" alt="" style="width: 3rem">
-                        </a>
-                        <p style="display: inline;">Sign In</p>
-                    </li>
-                    <li style="flex-direction: row;">
-                        <a href="create_account.html">
-                            <img src="icons/user-circle-solid.svg" alt="" style="width: 3rem">
-                        </a>
-                        <p>Create Account</p>
-                    </li>-->
-                    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
                 </ul>
             </nav>
             <h1 class="ribbon-text">MCP</h1>
         </header>
-        <main>
+        <main onclick="closeNav()">
             <div class="page-title">
                 <h1>Matt C. Perry Code Portfolio</h1>
             </div>
@@ -128,14 +113,6 @@
                     home and away. Home games give a team 5 extra points. If there is a tie, teams go into overtime to gain up to 15 more points
                     until there is no tie.</p>
                 </div>
-                <!-- <div class="website">
-                    <h2>Restoration Figures (REL C 225 Project)</h2>
-                    <a href="https://www.restorationfigures.org/"><img src="images/lorenzo-snow-with-apostles-893922-gallery.jpg" alt="Restoration Figures"></a>
-                </div>
-                <div class="website">
-                    <h2>Mission to Rome (REL A 211 Project)</h2>
-                    <a href="https://www.missiontorome.org/"><img src="images/bible-videos-paul-damascus-1426787-print.jpg" alt="Mission To Rome Website"></a>
-                </div> -->
             </div>
         </main>
     </div>
@@ -149,7 +126,6 @@
             </g>
         </symbol>
     </svg>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 

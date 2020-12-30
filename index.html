@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html id="html" lang="en">
 <head>
@@ -32,14 +33,14 @@
 </head>
 <body class="index" id="body">
     <div class="prevent-scroll">
-        <header>
-            <div class="hamburger">
+        <header id="header">
+            <div class="hamburger" onclick="openNav()">
                 <svg viewbox="0 0 32 32">
                     <use xlink:href="#hamburger-menu"/>
                 </svg>
             </div>
             <nav>
-                <div class="close">
+                <div class="close" onclick="closeNav()">
                     <svg viewbox="0 0 32 32">
                         <use xlink:href="#close-icon"/>
                     </svg>
@@ -74,22 +75,6 @@
                     <li>
                         <a href="portfolio.html">Portfolio</a>
                     </li>
-                    <!--<li>
-                        <a href="">Pokemon Go</a>
-                    </li>
-                    <li style="flex-direction: row;">
-                        <a class="inline" href="sign_in.html">
-                            <img src="icons/edit-solid.svg" alt="" style="width: 3rem">
-                        </a>
-                        <p style="display: inline;">Sign In</p>
-                    </li>
-                    <li style="flex-direction: row;">
-                        <a href="create_account.html">
-                            <img src="icons/user-circle-solid.svg" alt="" style="width: 3rem">
-                        </a>
-                        <p>Create Account</p>
-                    </li>-->
-                    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
                 </ul>
             </nav>
             <h1 class="ribbon-text">MCP</h1>
@@ -97,7 +82,7 @@
                 <h2>Matthew C. Perry</h2>
             </div>
         </header>
-        <main>
+        <main onclick="closeNav()">
             <div class="overlay">
                 <h2>Front-End Web Developer</h2>
             </div>
@@ -136,7 +121,6 @@
             </g>
         </symbol>
     </svg>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
