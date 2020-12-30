@@ -100,7 +100,7 @@
         flex-flow: wrap;
         order: -1;
         user-select: none;
-        margin: .1rem .2rem;
+        margin: 0;
         background-color: transparent;
         position: static;
     }
@@ -198,6 +198,7 @@
         height: auto;
         cursor: pointer;
         align-self: center;
+        z-index: 1;
     }
 
     header {
@@ -217,7 +218,6 @@
     nav {
         display: flex;
         flex-direction: column;
-        order: 0;
         background-color: var(--nav-background);
         position: absolute;
         top: 0;
@@ -228,7 +228,7 @@
         transform: translateX(-600px);
         transition: transform 500ms ease;
         height: 100vh;
-        border-right: 5px solid var(--dark-background);
+        border-right: solid 5px var(--dark-background);
     }
 
     .open nav {
@@ -299,6 +299,7 @@
         width: 100%;
         transform: translateY(-800px);
         height: auto;
+        border-right: none;
     }
 
     div.overlay {

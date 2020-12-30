@@ -3,16 +3,17 @@ const header = document.getElementById('header');
 const body = document.getElementById('body');
 const scrollBar = document.getElementById('::-webkit-scrollbar');
 const scrollBarThumb = document.getElementById('::-webkit-scrollbar-thumb');
-const wide = window.matchMedia('(min-width: 1024px)');
+const tablet = window.matchMedia('(min-width: 480px)');
+const desktop = window.matchMedia('(min-width: 1024px)');
 
-//MOBILE NAV JQUERY
+//MOBILE NAV
 //Open header when clicking the hamburger
 function openNav() {
     header.classList.add('open');
     //app.ribbonText.addClass('expand');
     body.style.height = '100%';
     body.style.overflowY = 'hidden';
-    if(wide.matches) body.style.borderRight = 'solid 15px var(--dark-background)';
+    if(tablet.matches) body.style.borderRight = 'solid 15px var(--dark-background)';
 }
 
 //Close header by clicking the X or tapping in document
@@ -21,10 +22,10 @@ function closeNav() {
     //app.ribbonText.removeClass('expand');
     body.style.height = 'initial';
     body.style.overflowY = 'scroll';
-    if(wide.matches) body.style.borderRight = 'none';
+    if(tablet.matches) body.style.borderRight = 'none';
 }
 
-//MOBILE NAV JQUERY END
+//MOBILE NAV END
 /*
 function mouseOverMoods() {
     moodPicker.classList.add('fade-in');
