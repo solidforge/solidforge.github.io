@@ -23,21 +23,13 @@
 
     body {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         font-family: var(--russo-one-font);
-        font-weight: lighter;
         color: var(--white);
         overflow-y: scroll;
         overflow-x: hidden;
-        width: 100%;
         margin: 0;
-        padding: 0;
         background: var(--dark-background) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        
     }
 
     p {
@@ -106,6 +98,7 @@
     header {
         display: flex;
         flex-flow: wrap;
+        order: -1;
         user-select: none;
         margin: .1rem .2rem;
         background-color: transparent;
@@ -161,7 +154,7 @@
         position: relative;
         bottom: 25vh;
         height: 50vh;
-        margin: -25vh;
+        margin: -25vh 0;
     }
 
     div.name-header {
@@ -177,7 +170,7 @@
     }
 
     section {
-        margin: 10rem 15%;
+        margin: 2rem 10% 5rem 10%;
         font-family: var(--playfair-font);
         font-size: 1.25rem;
         line-height: 2rem;
@@ -193,33 +186,10 @@
         border: solid 2px #161616;
         padding: 1rem;
         box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.5);
-        animation: scale-down-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    }
-
-    .website:hover {
-        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     }
 
     .page-title {
         margin: 4rem 0;
-    }
-
-    @keyframes scale-up-center {
-        0% {
-        transform: scale(1);
-        }
-        100% {
-        transform: scale(1.01);
-        }
-    }
-    
-    @keyframes scale-down-center {
-        0% {
-        transform: scale(1.01);
-        }
-        100% {
-        transform: scale(1);
-        }
     }
 
     /* MOBILE NAV STYLING */
@@ -247,6 +217,7 @@
     nav {
         display: flex;
         flex-direction: column;
+        order: 0;
         background-color: var(--nav-background);
         position: absolute;
         top: 0;
@@ -387,8 +358,39 @@
         margin: auto;
     }
 
+    section {
+        margin: 10rem 15%;
+        
+    }
+
     div.portfolio {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+    }
+
+    .website {
+        animation: scale-down-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+
+    .website:hover {
+        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+
+    @keyframes scale-up-center {
+        0% {
+        transform: scale(1);
+        }
+        100% {
+        transform: scale(1.01);
+        }
+    }
+    
+    @keyframes scale-down-center {
+        0% {
+        transform: scale(1.01);
+        }
+        100% {
+        transform: scale(1);
+        }
     }
 }
